@@ -25,12 +25,12 @@ app.use("/cart",cartRouter);
 app.use("/order",orderRouter);
 
 
-app.listen(8000, async()=>{
+app.listen(process.env.port, async()=>{
     try{
         await connection;
         console.log("Connected to DB");
     }catch(err){
         console.log("err:", err);
     }
-    console.log(`Server running on port 8000`);
+    console.log(`Server running on port ${process.env.port}`);
 })
